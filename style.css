@@ -120,7 +120,7 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(103, 51, 153, 0.3);
+  background-color: rgb(103, 51, 153, 0.5);
 }
 
 .img-1 {
@@ -179,4 +179,13 @@ h3 {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* gray/black */
+.black-bt-gray {
+  background-color: #222222;
+  width: 100%;
+  height: 50px;
+  margin-top: 100px;
+  border-bottom: 10px solid #000000;
 }
