@@ -1,0 +1,275 @@
+/* 필수 RESET */
+body,
+p,
+ul {
+  margin: initial;
+  padding: initial;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: initial;
+  /* padding: 0; */
+  font-size: inherit;
+  font-size: inherit;
+}
+img {
+  max-width: 100%;
+  /* 자신의 부모 크기보다 더 커지지 못하게 강제함 */
+  height: auto;
+  vertical-align: top;
+  /* 이미지 부분 하단에 빈공간 없게 */
+}
+button {
+}
+
+/* //필수 RESET */
+button {
+  background-color: orangered;
+  color: white;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+.title-controls {
+}
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.l_wrapper {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.l_row {
+  display: flex;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.l_col {
+  flex-basis: 33.333333%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.l_col_third {
+  flex-basis: 33.333333%;
+}
+.l_col_half {
+  flex-basis: 50%;
+}
+
+.banchan {
+  background-color: blue;
+}
+.section {
+}
+/* header */
+
+.section {
+  padding: 100px 0;
+}
+
+.section_purple {
+  background-color: #673399;
+  color: white;
+}
+
+.section_pink {
+  background-color: seashell;
+  color: salmon;
+}
+
+.section-header {
+  box-shadow: inset 0 0 10px cyan;
+  margin-bottom: 100px;
+}
+
+.section-contents {
+  box-shadow: inset 0 0 10px deeppink;
+}
+
+.title {
+  box-shadow: inset 0 0 10px rgb(241, 205, 20);
+  display: flex;
+  align-items: center;
+  /* 기본은 nomal로 되어있음 */
+}
+.title-headings {
+  box-shadow: inset 0 0 10px darkorange;
+  /* flex-basis: 26%; */
+  min-width: 26%;
+  /* shirink가 1  이라서 적용이 안됨 */
+  flex-shrink: 0;
+  font-size: 40px;
+  /* position: relative; */
+}
+
+.title-headings strong {
+  box-shadow: inset 0 -20px 0 orangered;
+  /*  box-shadow: inset
+          x축 : 10px(양수) = 텍스트 좌측 끝 / -10px(음수) = 텍스트 우측 끝 
+          y축 : 양수 위쪽 / 음수 아래쪽
+          순서 :  x y blur spread
+        */
+}
+
+.title-headings strong.type_orangered {
+  box-shadow: inset 0 -20px 0 orangered;
+}
+.title-headings strong.type_white {
+  box-shadow: inset 0 -20px 0 rgb(255, 255, 255);
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* .title-headings strong::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: orangered;
+      } */
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.title p {
+  box-shadow: inset 0 0 10px rgb(240, 151, 8);
+  max-width: 500px;
+  /* 글자 가로 갯수 변함  */
+  display: flex;
+  align-items: center;
+}
+
+.title p::before {
+  content: "";
+  width: 60px;
+  height: 2px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  margin-right: 20px;
+}
+/* //header */
+
+/* card */
+.card {
+  background-color: white;
+  color: #222;
+  margin-bottom: 24px;
+  display: flex;
+  min-height: 200px;
+  /* 컨텐츠 값이랑 상관없이 최소값으로 */
+}
+.card :last-child {
+  margin-bottom: 0;
+}
+
+/* 카드 다음에 나오는 카드만 선택 */
+/* .card + .card {
+        margin-top: 24px;
+      } */
+
+.card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.card-cover {
+  box-shadow: inset 0 0 10px rgb(55, 255, 81);
+  flex-basis: 26%;
+  /* 어떤 상황이던 안정화를 위해 위의 베이시스 값이랑 같이 가져단다. */
+  flex-shrink: 0;
+  /* 아주 중요 flex-basis 26% 가 어떤 일이 있어도 고정된다 쉬링크 */
+  position: relative;
+  /* 부모요소로써 아래 앱솔루트와 사용 */
+}
+
+.card-cover img {
+  position: absolute;
+  /* 공간을 차지하지 않도록 */
+  width: 100%;
+  height: 100%;
+  /* 뷰포트 기준으로 붙음 */
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  /* 이미지 찌그러지는걸 막아줌 백그라운드 처럼 이미지 크지 조절 */
+}
+
+/* 위에 포지션 앱솔 전체 지우고 아래 앱솔주고 inset:0; 넣어도 가능 */
+
+.card-cover h2 {
+  position: relative;
+  /* 원래는 나중 값이 앞으로 튀어 나와야하는데 속성 줘서 앞으로 */
+  /* 앱솔루트로 쓰면 반응형이 곤란해짐 */
+  background-color: reg(000 / 0.4);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+}
+
+.card-contents {
+  /* 커버 이외의 공간을 가득 채웠어 */
+  box-shadow: inset 0 0 20px rgb(0, 61, 245);
+  flex-basis: 0;
+  /* 안에 컨텐츠 값이랑 상관없이 아래의 온전히 grow 값으로 가득차도록 /auto도 가능*/
+  flex-grow: 1;
+  /* 아주 중요 위의 틀 값이랑 같이 간다  */
+  min-width: 0;
+  /* 아주 중요 얼마나 글이 들어갈지 몰라 안정적으로 넘쳐흐르는걸 막아준다? */
+  padding: 30px;
+  /* 좌측과 우측공간 사이 띄우기 */
+}
+.card-contents h3 {
+  font-size: 18px;
+  color: #673399;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.lists {
+  box-shadow: inset 0 0 10px rgb(0, 61, 245);
+}
+
+.lists li {
+  /* dispaly flex 안쓰는 이유는 글이 많아지면 찌그러진다
+        중간에 스트롱으로 강조하면 난리난다. => 그럴땐 스팬으로 한번 감싸야한다. */
+  text-indent: -20px;
+  /* 들여쓰기 */
+  padding-left: 20px;
+}
+
+.lists li + li {
+  margin-top: 6px;
+}
+
+.lists li::before {
+  content: "";
+  background-color: orange;
+  width: 10px;
+  height: 10px;
+  /* 가성요소는 인라인 엘리먼츠는 없다? */
+  display: inline-block;
+  /* 가로 배치 */
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/* // card */
+
+/* l_wrapper-second  */
+
+/* // l_wrapper-second */
